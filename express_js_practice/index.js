@@ -49,6 +49,28 @@ app = express();
         
     });
 
+    app.get("/header",function(req,res){
+        res.append("name","rafiqul");
+        res.append("age","25")
+
+        res.status(201).end("It is header response");
+        
+    });
+    app.get("/cookie",function(req,res){
+        res.cookie("name","rafiqul");
+        res.cookie("age","25")
+
+        res.end("It is cookie response");
+        
+    });
+    app.get("/clearcookie",function(req,res){
+        res.clearCookie("name");
+        res.clearCookie("age")
+
+        res.end("It is Celar cookie response");
+        
+    });
+
 
 app.listen(8080, function(){
     console.log("Server run success")
